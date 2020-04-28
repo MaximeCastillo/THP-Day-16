@@ -1,11 +1,18 @@
 <html>
 <head>
-    <title>Affichage sur demande</title>
+    <title>Page Potin</title>
 </head>
 <body>
-    <h1>C'est ici que tu vas voir apparaitre ton affichage dynamique !</h1>
-        <p>
-            Voici le numéro du potin que tu veux : <%= id %> !
-        </p>
+    <h1>Voici la page du potin n°<%= id+1 %></h1>
+    <p>
+        Son auteur : <%= gossip.author %></br>
+        Le contenu du potin : <%= gossip.content %>
+    </p>
+    <p>
+        <a href="/gossips/<%= id+1 %>/edit">Editer le potin</a>
+    </p>
+    <p>
+        <a href="/">Revenir à la page des potins</a>
+    </p>
 </body>
 </html>

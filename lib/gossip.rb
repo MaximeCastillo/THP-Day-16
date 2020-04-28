@@ -22,4 +22,15 @@ class Gossip
     return all_gossips
   end
 
+  def self.find (id)
+    return Gossip.all[id]
+  end
+
+  def self.update (id, editor, edited_content)
+    all_gossips = CSV.read("./db/gossip.csv")
+      gossip = all_gossips[id]
+      gossip[0] = editor
+      gossip[1] = edited_content
+      CSV.open("./db/gossip.csv", "wb") {|csv| all_gossips.each {|elem| csv << elem} }
+    end
 end
