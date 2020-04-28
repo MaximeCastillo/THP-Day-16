@@ -3,7 +3,7 @@
     <title>Page Potin</title>
 </head>
 <body>
-    <h1>Voici la page du potin n°<%= id+1 %></h1>
+    <h1>Voici la page du potin</h1>
     <p>
         Son auteur : <%= gossip.author %></br>
         Le contenu du potin : <%= gossip.content %>
@@ -11,6 +11,13 @@
     <p>
         <a href="/gossips/<%= id+1 %>/edit">Editer le potin</a>
     </p>
+    <h3>Commentes ce potin ci-dessous</h3>
+    <% comments.each do |comment| %>
+    <p>
+        <%= comment.author %><br/>
+        <%= comment.content %>
+    </p>
+    <% end %>
     <p>
         <a href="/">Revenir à la page des potins</a>
     </p>
